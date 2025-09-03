@@ -1,1 +1,1 @@
-# AtividadeLista
+# Repositório de atividades feitas.
