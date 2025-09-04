@@ -89,25 +89,83 @@ dados_pessoais(nome=nome,idade=idade, cidade=cidade)
 '''
 
 # 8.
+'''
+def calculadora(a, b, oper):
+    def soma(x, y):
+        return x + y
 
-def calculadora(a, b):
-    def soma(a, b):
-        return a + b
-    def subt(a, b):
-        return a - b
-    def mult(a, b):
-        return a * b
-    def divi(a, b):
-        return a / b
+    def subt(x, y):
+        return x - y
 
-num = float(input("Digite um número:"))
-num1 = float(input("Digite o segundo número:"))
-oper = int(input("SELECIONE A OPERAÇÃO\n " \
-                "1 - SOMA\n " \
-                "2 - SUBTRAÇÃO\n" \
-                "3 - MULTIPLICAÇÃO\n" \
-                "4 - DIVISÃO"))
+    def mult(x, y):
+        return x * y
 
-match oper:
-    case 1:
-        print(calculadora().soma(num, num1))
+    def divi(x, y):
+        return x / y
+
+    match oper:
+        case 1:
+            return soma(a, b)
+        case 2:
+            return subt(a, b)
+        case 3:
+            return mult(a, b)
+        case 4:
+            if b != 0:
+                return divi(a, b)
+            else:
+                return "Erro: divisão por zero"
+        case _:
+            return "Operação inválida"
+
+
+# Entrada do usuário
+num = float(input("Digite um número: "))
+num1 = float(input("Digite o segundo número: "))
+oper = int(input("SELECIONE A OPERAÇÃO\n"
+                 "1 - SOMA\n"
+                 "2 - SUBTRAÇÃO\n"
+                 "3 - MULTIPLICAÇÃO\n"
+                 "4 - DIVISÃO\n"))
+
+resultado = calculadora(num, num1, oper)
+print("Resultado:", resultado)
+'''
+
+# 9.
+def calculadora(a, b, oper):
+    def soma(x, y):
+        return x + y
+
+    def subt(x, y):
+        return x - y
+
+    def mult(x, y):
+        return x * y
+
+    def divi(x, y):
+        return x / y
+
+    match oper:
+        case 1:
+            return soma(a, b)
+        case 2:
+            return subt(a, b)
+        case 3:
+            return mult(a, b)
+        case 4:
+            if b != 0:
+                return divi(a, b)
+            else:
+                return "Erro: divisão por zero"
+        case _:
+            return "Operação inválida"
+
+
+num = 10
+num1 = 5
+oper = 3  # 1 - SOMA, 2 - SUBTRAÇÃO, 3 - MULTIPLICAÇÃO, 4 - DIVISÃO
+
+resultado = calculadora(num, num1, oper)
+print("Resultado:", resultado)
+
